@@ -1,0 +1,47 @@
+curl -X POST -H "Authorization: key=AIzaSyBhaLuojSQ2xynUtW5V_bi1wXAcQc7lb5E" -H "Content-Type: application/json" -d '{
+  "message": {
+    "notification": {
+      "title": "FCM Message",
+      "body": "This is a message from FCM"
+    },
+    "webpush": {
+      "headers": {
+        "Urgency": "high"
+      },
+      "notification": {
+        "body": "This is a message from FCM to web",
+        "requireInteraction": "true",
+        "badge": "/badge-icon.png"
+      }
+    }
+  },
+  "token": "cM2sT7dd5nmL_tqPP7McOz:APA91bGNizLhuzhoXZ26ryYjTwpKvNfuJx8sDX0RVuuE691zdVQoPYkyaYAf69xERKGXDttybMmU1m5fG6X_pOEYvxg4IEtdyAPq8LPCJ7HiJyRG07N5_dYSkpnCV3QFtEa-_oVRgzCn"
+  }
+}' "https://fcm.googleapis.com/v1/projects/myproject-b5ae1/messages:send"
+
+
+
+POST https://fcm.googleapis.com/v1/projects/myproject-b5ae1/messages:send HTTP/1.1
+
+Content-Type: application/json
+Authorization: Bearer AIzaSyBhaLuojSQ2xynUtW5V_bi1wXAcQc7lb5E
+
+{
+  "message": {
+    "token" : "cM2sT7dd5nmL_tqPP7McOz:APA91bGNizLhuzhoXZ26ryYjTwpKvNfuJx8sDX0RVuuE691zdVQoPYkyaYAf69xERKGXDttybMmU1m5fG6X_pOEYvxg4IEtdyAPq8LPCJ7HiJyRG07N5_dYSkpnCV3QFtEa-_oVRgzCn",
+    "notification": {
+      "title": "FCM Message",
+      "body": "This is a message from FCM"
+    },
+    "webpush": {
+      "headers": {
+        "Urgency": "high"
+      },
+      "notification": {
+        "body": "This is a message from FCM to web",
+        "requireInteraction": "true",
+        "badge": "/badge-icon.png"
+      }
+    }
+  }
+}
